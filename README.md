@@ -1,4 +1,4 @@
-# ‼️😁 Note: This project is not yet complete, It's only the login and registration page that is pushed, expect more files such as the customer dashboard by the beginning of April 2024.
+### ‼️😁 Note: This project is not yet fully complete, It's only the login and registration page that is pushed, expect more files such as the customer dashboard by the beginning of April 2024.
 
 # 🏦 MorePlus Financial Bank - Banking Web System
 
@@ -81,4 +81,4 @@ This project is licensed under the [MohsLaw😁](LICENSE) Kidding hahaha! You ar
 
 ---
 
-**Note:** This project is fictional and intended for demonstration purposes only.
+**Note:** This project is fictional and intended for demonstration purposes only. Created by @Moddic10 on 27th March 2024.
