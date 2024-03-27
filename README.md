@@ -1,4 +1,4 @@
-### ‼️😁 Note: This project is not yet fully complete, It's only the login and registration page that is pushed, expect more files such as the customer dashboard by the beginning of April 2024.
+### ‼️😁 Note: This project is not yet fully complete. It's just the login and registration pages that are pushed together with the necessary express.js folders including models, views, routes, public, tests. Inshaallah expect more files such as the customer dashboard by the beginning week of April 2024.
 
 # 🏦 MorePlus Financial Bank - Banking Web System
 
