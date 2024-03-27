@@ -1,27 +1,37 @@
-# MorePlus Financial Bank - Banking Web System
+# ‼️😁 Note: This project is not yet complete, It's only the login and registration page that is pushed, expect more files such as the customer dashboard by the beginning of April 2024.
 
-MorePlus Financial Bank is a fictional banking web application developed using Express and Node.js. This web system provides essential banking functionalities, including user registration, login, and a dashboard interface.
+# 🏦 MorePlus Financial Bank - Banking Web System
 
-## Features
+MorePlus Financial Bank is a fictional banking web application developed using Express and Node.js. This application provides a user-friendly interface for customers to manage their banking needs online. The system includes core banking functionalities such as user registration, login, and dashboard access, along with Selenium Chrome WebDriver tests to ensure the reliability of these features.
 
-- **User Registration**: Users can sign up for an account by providing their personal details.
-- **User Login**: Registered users can log in securely using their email and password.
-- **Dashboard Interface**: Authenticated users are presented with a dashboard containing their account information and transaction history.
-- **Selenium Tests**: Selenium Chrome WebDriver tests are implemented to ensure the reliability of core functionalities.
+---
 
-## Technologies Used
+## 🚀 Features
 
-- **Express**: A web application framework for Node.js used for building the backend of the application.
-- **Node.js**: A JavaScript runtime used for executing JavaScript code on the server-side.
-- **Selenium WebDriver**: A tool for automating web application testing, used here for functional testing of the web system.
-- **HTML/CSS**: Used for designing and styling the user interface of the web application.
+- **User Registration**: New users can create an account by providing their personal information.
+- **User Login**: Registered users can securely log in to their account using their email and password.
+- **Dashboard**: Users have access to a dashboard where they can view their account details and perform various banking operations.
+- **Selenium Tests**: The application includes Selenium Chrome WebDriver tests to verify the functionality of the registration, login, and dashboard features.
 
-## Getting Started
+---
+
+## 🛠️ Technologies Used
+
+- **Express**: Web application framework for Node.js used to build the backend server.
+- **Node.js**: JavaScript runtime environment used to execute server-side code.
+- **Selenium WebDriver**: Browser automation tool used for testing web applications.
+- **EJS**: Templating engine for rendering dynamic content on the web pages.
+- **Bootstrap**: Front-end framework for building responsive and mobile-first websites.
+- **MySQL**: Relational database management system used to store user data.
+
+---
+
+## 📦 Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/Moddic10/MorePlus-Financial---A-Banking-Web-System.git>
    ```
 
 2. Install dependencies:
@@ -49,10 +59,26 @@ To run the Selenium WebDriver tests:
    node tests/test.js
    ```
 
-## Contributing
+---
 
-Contributions are welcome! Please open an issue to discuss the changes you would like to make or submit a pull request.
+## 🌟 Usage
 
-## License
+- Register a new account by providing your personal details.
+- Log in to your account using your email and password.
+- Explore the dashboard to view your account details and perform banking operations.
+- Use the Selenium tests to verify the functionality of the registration, login, and dashboard features.
 
-This project is licensed under the [MohsLaw😁] hahaaha! You are free to use my code.
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your improvements or email me at <span style="color: #2ecc71; font-weight: bold;">mohslaw10@gmail.com</span> for any issues you face, I'll be glad to help.
+
+---
+
+## 📝 License
+This project is licensed under the [MohsLaw😁](LICENSE) Kidding hahaha! You are free to use my code.
+
+---
+
+**Note:** This project is fictional and intended for demonstration purposes only.
