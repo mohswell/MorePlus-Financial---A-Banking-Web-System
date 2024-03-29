@@ -1,12 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome, <%= user.username %>!</h1>
-    <p>This is your dashboard.</p>
-    <a href="/logout">Logout</a>
+    <header class="header">
+    <div class="container">
+        <h1 class="header-title">Banking Dashboard</h1>
+        <div class="header-controls">
+        <div class="header-search">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-profile">
+            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+            <span class="username">John Doe</span>
+            <a href="#" class="settings"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <nav class="header-nav">
+        <div class="container">
+        <a href="#">Home</a>
+        <a href="#">Accounts</a>
+        <a href="#">Transactions</a>
+        <a href="#">Profile</a>
+        </div>
+    </nav>
+    </header>
+    
+    <main class="dashboard">
+        <section class="section">
+            <h2 class="section-title">User Profile</h2>
+            <div class="section-content">
+                <p>Name: <%= user.first_name %> <%= user.last_name %></p>
+                <p>Email: <%= user.email %></p>
+                <p>Phone: <%= user.phone %></p>
+                <p>Birthday: <%= user.birthday %></p>
+                <p>Gender: <%= user.gender %></p>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">Account Information</h2>
+            <div class="section-content">
+                <% if (user.Accounts && user.Accounts.length > 0) { %>
+                    <% user.Accounts.forEach(account => { %>
+                        <p>Account Number: <%= account.accountNumber %></p>
+                        <p>Balance: <%= account.balance %></p>
+                    <% }); %>
+                <% } else { %>
+                    <p>No accounts found for this user.</p>
+                <% } %>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">Recent Transactions</h2>
+            <div class="section-content">
+                <ul>
+                    <% if (user.Accounts && user.Accounts.length > 0) { %>
+                        <% user.Accounts.forEach(account => {
+                            if (account.Transactions && account.Transactions.length > 0) {
+                                account.Transactions.forEach(transaction => { %>
+                                    <li>Date: <%= transaction.date %>, Amount: <%= transaction.amount %>, Description: <%= transaction.description %>, Type: <%= transaction.type %></li>
+                                <% });
+                            } else { %>
+                                <li>No transactions found for this account.</li>
+                            <% }
+                        });
+                    } else { %>
+                        <li>No accounts found for this user.</li>
+                    <% } %>
+                </ul>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

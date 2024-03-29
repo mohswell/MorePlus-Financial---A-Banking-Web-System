@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
+const { createAccount, makeTransaction, getAccountInformation } = require('./services/bankingService');
 const PORT = process.env.PORT || 3000;
 const sequelize = require('./sequelize');
 const User = require('./models/user');
@@ -92,11 +93,47 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.get('/dashboard', (req, res) => {
-    if (req.session.user) {
-        res.render('dashboard', { user: req.session.user });
-    } else {
-        res.redirect('/login');
+// Dashboard route
+app.get('/dashboard/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    try {
+        const accountInfo = await getAccountInformation(userId);
+        res.render('dashboard', { user: accountInfo });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Create account route
+app.post('/accounts', async (req, res) => {
+    const { userId, accountNumber } = req.body;
+    try {
+        const account = await createAccount(userId, accountNumber);
+        res.json(account);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Make transaction route
+app.post('/transactions', async (req, res) => {
+    const { userId, accountId, amount, description, type } = req.body;
+    try {
+        const transaction = await makeTransaction(userId, accountId, amount, description, type);
+        res.json(transaction);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Get account information route
+app.get('/accounts/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    try {
+        const accountInfo = await getAccountInformation(userId);
+        res.json(accountInfo);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 });
 

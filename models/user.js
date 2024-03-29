@@ -36,4 +36,8 @@ const User = sequelize.define('user', {
     }
 });
 
+// Define associations
+User.hasMany(Account);
+User.hasMany(Transaction);
+
 module.exports = User;

@@ -119,4 +119,5 @@ added 46 packages, and audited 328 packages in 15s
 
 found 0 vulnerabilities
 
-C:\Users\PC\Desktop\banking-web-app>
+SELECT * from accounts;
+
