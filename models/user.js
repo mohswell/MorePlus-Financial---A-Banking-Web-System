@@ -1,5 +1,9 @@
 const { DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../sequelize');
+const Account = require('./Account');
+const Transaction = require('./Transaction');
+
+// Define model
 
 const User = sequelize.define('user', {
     first_name: {

@@ -94,15 +94,29 @@ app.post('/login', async (req, res) => {
 });
 
 // Dashboard route
-app.get('/dashboard/:userId', async (req, res) => {
-    const userId = req.params.userId;
+app.get('/dashboard', async (req, res) => {
+    // Check if the user is logged in (authenticated)
+    if (!req.session.user) {
+        // If not logged in, redirect to the login page
+        res.redirect('/login');
+        return;
+    }
+
+    // Assuming you have a session variable containing the user ID
+    const userId = req.session.user.id;
+    
     try {
+        // Fetch account information for the logged-in user
         const accountInfo = await getAccountInformation(userId);
-        res.render('dashboard', { user: accountInfo });
+        // Render the dashboard template from the dashboard directory
+        res.render('dashboard/dashboard', { user: accountInfo });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        // Handle errors
+        console.error('Error fetching account information:', error);
+        res.status(500).render('error', { error: 'An error occurred while fetching account information' });
     }
 });
+
 
 // Create account route
 app.post('/accounts', async (req, res) => {
