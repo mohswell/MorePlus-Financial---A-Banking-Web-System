@@ -1,0 +1,554 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "ObjectId",
+        "importPath": "bson",
+        "description": "bson",
+        "isExtraImport": true,
+        "detail": "bson",
+        "documentation": {}
+    },
+    {
+        "label": "JWTManager",
+        "importPath": "flask_jwt_extended",
+        "description": "flask_jwt_extended",
+        "isExtraImport": true,
+        "detail": "flask_jwt_extended",
+        "documentation": {}
+    },
+    {
+        "label": "jwt_required",
+        "importPath": "flask_jwt_extended",
+        "description": "flask_jwt_extended",
+        "isExtraImport": true,
+        "detail": "flask_jwt_extended",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "flask_jwt_extended",
+        "description": "flask_jwt_extended",
+        "isExtraImport": true,
+        "detail": "flask_jwt_extended",
+        "documentation": {}
+    },
+    {
+        "label": "get_jwt_identity",
+        "importPath": "flask_jwt_extended",
+        "description": "flask_jwt_extended",
+        "isExtraImport": true,
+        "detail": "flask_jwt_extended",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "secrets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "secrets",
+        "description": "secrets",
+        "detail": "secrets",
+        "documentation": {}
+    },
+    {
+        "label": "string",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "string",
+        "description": "string",
+        "detail": "string",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate_user",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def authenticate_user():\n    data = request.json\n    # Retrieve username and password from environment variables\n    username = os.getenv('USERNAME')\n    password = os.getenv('PASSWORD')\n    # Log the loaded environment variables\n    print(\"Loaded USERNAME:\", username)\n    print(\"Loaded PASSWORD:\", password)\n    # Check if 'username' and 'password' keys are in the request data\n    if 'username' not in data or 'password' not in data:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_users",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_users():\n    users = list(users_collection.find({}, {'_id': 0}))\n    return jsonify(users)\n@app.route('/users', methods=['POST'])\n@jwt_required()\ndef create_user():\n    data = request.json\n    if 'name' not in data or 'email' not in data:\n        return jsonify({'error': 'Missing parameters: name or email'}), 400\n    # Check if the document already exists",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "create_user",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def create_user():\n    data = request.json\n    if 'name' not in data or 'email' not in data:\n        return jsonify({'error': 'Missing parameters: name or email'}), 400\n    # Check if the document already exists\n    existing_document = users_collection.find_one({})\n    if existing_document:\n        # Get the count of existing users\n        user_count = len(existing_document['users'])\n    else:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_user",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_user(user_id):\n    try:\n        user_id = int(user_id)\n    except ValueError:\n        return jsonify({'error': 'Invalid user ID format'}), 400\n    user = users_collection.find_one({\"users._id\": user_id}, {'_id': 0, 'users.$': 1})\n    if user:\n        return jsonify(user)\n    else:\n        return jsonify({'error': 'User not found'}), 404",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "delete_user",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def delete_user(user_id):\n    try:\n        user_id = int(user_id)\n    except ValueError:\n        return jsonify({'error': 'Invalid user ID format'}), 400\n    # Find the user with the specified user_id\n    user = users_collection.find_one({\"users._id\": user_id}, {'_id': 0, 'users.$': 1})\n    if user:\n        # Remove the user from the 'users' array using $pull\n        users_collection.update_one({}, {\"$pull\": {\"users\": {\"_id\": user_id}}})",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_accounts",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_user_accounts(user_id):\n    try:\n        user_id = int(user_id)\n    except ValueError:\n        return jsonify({'error': 'Invalid user ID format'}), 400\n    user = users_collection.find_one({\"users._id\": user_id}, {'_id': 0, 'users.$': 1})\n    if user:\n        accounts = user['users'][0]['accounts']\n        return jsonify(accounts)\n    else:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "add_account",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def add_account(user_id):\n    data = request.json\n    # Check if request body contains 'type' and 'balance'\n    if not data or 'type' not in data or 'balance' not in data:\n        return jsonify({'error': 'Invalid account data. Ensure \"type\" and \"balance\" are provided.'}), 400\n    try:\n        user_id = int(user_id)\n    except ValueError:\n        return jsonify({'error': 'Invalid user ID format'}), 400\n    # Find the user with the specified user_id",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "transfer_funds",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def transfer_funds():\n    data = request.json\n    # Check if request body contains required fields\n    required_fields = ['from_user_id', 'from_account_id', 'to_user_id', 'to_account_id', 'amount']\n    if not all(field in data for field in required_fields):\n        return jsonify({'error': 'Invalid transfer data. Ensure all required fields are provided.'}), 400\n    try:\n        from_user_id = int(data['from_user_id'])\n        from_account_id = str(data['from_account_id'])\n        to_user_id = int(data['to_user_id'])",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "client = MongoClient('mongodb://localhost:27017/')\ndb = client['banking-api']\nusers_collection = db['users']\n# Load environment variables from .env file\nload_dotenv()\n# Initialize Flask app\napp = Flask(__name__)\n# Initialize JWTManager with the loaded secret key\napp.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')\njwt = JWTManager(app)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "db = client['banking-api']\nusers_collection = db['users']\n# Load environment variables from .env file\nload_dotenv()\n# Initialize Flask app\napp = Flask(__name__)\n# Initialize JWTManager with the loaded secret key\napp.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')\njwt = JWTManager(app)\n# Authentication endpoint",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "users_collection",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "users_collection = db['users']\n# Load environment variables from .env file\nload_dotenv()\n# Initialize Flask app\napp = Flask(__name__)\n# Initialize JWTManager with the loaded secret key\napp.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')\njwt = JWTManager(app)\n# Authentication endpoint\n@app.route('/auth', methods=['POST'])",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\n# Initialize JWTManager with the loaded secret key\napp.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')\njwt = JWTManager(app)\n# Authentication endpoint\n@app.route('/auth', methods=['POST'])\ndef authenticate_user():\n    data = request.json\n    # Retrieve username and password from environment variables\n    username = os.getenv('USERNAME')",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['JWT_SECRET_KEY']",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')\njwt = JWTManager(app)\n# Authentication endpoint\n@app.route('/auth', methods=['POST'])\ndef authenticate_user():\n    data = request.json\n    # Retrieve username and password from environment variables\n    username = os.getenv('USERNAME')\n    password = os.getenv('PASSWORD')\n    # Log the loaded environment variables",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "jwt = JWTManager(app)\n# Authentication endpoint\n@app.route('/auth', methods=['POST'])\ndef authenticate_user():\n    data = request.json\n    # Retrieve username and password from environment variables\n    username = os.getenv('USERNAME')\n    password = os.getenv('PASSWORD')\n    # Log the loaded environment variables\n    print(\"Loaded USERNAME:\", username)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def client():\n    app.config['TESTING'] = True\n    with app.test_client() as client:\n        yield client\ndef get_auth_token(client):\n    response = client.post('/auth', json={\"username\": \"Mohammed\", \"password\": \"password\"})\n    return response.json.get('access_token', '')\n# Test getting all accounts for a specific user by ID\ndef test_get_all_accounts_for_user(client):\n    response = client.get('/users/1/accounts')",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "get_auth_token",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def get_auth_token(client):\n    response = client.post('/auth', json={\"username\": \"Mohammed\", \"password\": \"password\"})\n    return response.json.get('access_token', '')\n# Test getting all accounts for a specific user by ID\ndef test_get_all_accounts_for_user(client):\n    response = client.get('/users/1/accounts')\n    assert response.status_code == 200\n    assert isinstance(response.json, list)\n# Test getting all accounts for a non-existent user\ndef test_get_all_accounts_for_non_existent_user(client):",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_all_accounts_for_user",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def test_get_all_accounts_for_user(client):\n    response = client.get('/users/1/accounts')\n    assert response.status_code == 200\n    assert isinstance(response.json, list)\n# Test getting all accounts for a non-existent user\ndef test_get_all_accounts_for_non_existent_user(client):\n    response = client.get('/users/999/accounts')\n    assert response.status_code == 404\n    assert 'error' in response.json\n# Test getting accounts for a user with invalid user ID format",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_all_accounts_for_non_existent_user",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def test_get_all_accounts_for_non_existent_user(client):\n    response = client.get('/users/999/accounts')\n    assert response.status_code == 404\n    assert 'error' in response.json\n# Test getting accounts for a user with invalid user ID format\ndef test_get_accounts_for_user_with_invalid_id_format(client):\n    response = client.get('/users/invalid_id/accounts')\n    assert response.status_code == 400\n    assert 'error' in response.json\n# Test adding a new account for a specific user by ID with valid data",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_accounts_for_user_with_invalid_id_format",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def test_get_accounts_for_user_with_invalid_id_format(client):\n    response = client.get('/users/invalid_id/accounts')\n    assert response.status_code == 400\n    assert 'error' in response.json\n# Test adding a new account for a specific user by ID with valid data\ndef test_add_account_for_user_with_valid_data(client):\n    auth_token = get_auth_token(client)\n    account_data = {\n        \"type\": \"savings\",\n        \"balance\": 1000.0",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "test_add_account_for_user_with_valid_data",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def test_add_account_for_user_with_valid_data(client):\n    auth_token = get_auth_token(client)\n    account_data = {\n        \"type\": \"savings\",\n        \"balance\": 1000.0\n    }\n    response = client.post('/users/1/accounts', json=account_data, headers={'Authorization': f'Bearer {auth_token}'})\n    assert response.status_code == 201\n    assert 'account' in response.json\n# Test adding a new account for a non-existent user",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "test_add_account_for_non_existent_user",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def test_add_account_for_non_existent_user(client):\n    auth_token = get_auth_token(client)\n    account_data = {\n        \"type\": \"savings\",\n        \"balance\": 1000.0\n    }\n    response = client.post('/users/999/accounts', json=account_data, headers={'Authorization': f'Bearer {auth_token}'})\n    assert response.status_code == 404\n    assert 'User not found' in response.json['error']\n# Test adding a new account for a specific user by ID with missing parameters",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "test_add_account_for_user_with_missing_parameters",
+        "kind": 2,
+        "importPath": "test_api-accounts",
+        "description": "test_api-accounts",
+        "peekOfCode": "def test_add_account_for_user_with_missing_parameters(client):\n    auth_token = get_auth_token(client)\n    account_data = {\n        \"type\": \"savings\"\n    }\n    response = client.post('/users/1/accounts', json=account_data, headers={'Authorization': f'Bearer {auth_token}'})\n    assert response.status_code == 400\n    assert 'error' in response.json\nif __name__ == \"__main__\":\n    pytest.main()",
+        "detail": "test_api-accounts",
+        "documentation": {}
+    },
+    {
+        "label": "db_connection",
+        "kind": 2,
+        "importPath": "test_api-db",
+        "description": "test_api-db",
+        "peekOfCode": "def db_connection():\n    client = MongoClient('mongodb://localhost:27017/')\n    # Create a test database\n    test_db_name = 'test_banking_api'\n    db = client[test_db_name]\n    yield db  # Provide the database connection to tests\n    # Clean up the test database after all tests are executed\n    client.drop_database(test_db_name)\n# Test to verify database connection\n\"\"\"def test_database_connection(db_connection):",
+        "detail": "test_api-db",
+        "documentation": {}
+    },
+    {
+        "label": "test_database_connection_error_handling",
+        "kind": 2,
+        "importPath": "test_api-db",
+        "description": "test_api-db",
+        "peekOfCode": "def test_database_connection_error_handling():\n    # Simulate database connection failure by providing an incorrect URI\n    with pytest.raises(Exception):\n        client = MongoClient('mongodb://incorrect_uri:27017/')\n        # Try accessing a collection to trigger the connection attempt\n        client.test_database.test_collection.find_one()\n# Test data manipulation: Inserting and retrieving data\ndef test_data_manipulation(db_connection):\n    # Insert test data into the database\n    test_user = {\"name\": \"Test User\", \"email\": \"test@example.com\", \"accounts\": []}",
+        "detail": "test_api-db",
+        "documentation": {}
+    },
+    {
+        "label": "test_data_manipulation",
+        "kind": 2,
+        "importPath": "test_api-db",
+        "description": "test_api-db",
+        "peekOfCode": "def test_data_manipulation(db_connection):\n    # Insert test data into the database\n    test_user = {\"name\": \"Test User\", \"email\": \"test@example.com\", \"accounts\": []}\n    db_connection.users.insert_one(test_user)\n    # Retrieve the inserted data from the database\n    retrieved_user = db_connection.users.find_one({\"name\": \"Test User\"})\n    assert retrieved_user is not None\n    assert retrieved_user[\"name\"] == \"Test User\"\n# Test transaction management (if applicable)\ndef test_transaction_management(db_connection):",
+        "detail": "test_api-db",
+        "documentation": {}
+    },
+    {
+        "label": "test_transaction_management",
+        "kind": 2,
+        "importPath": "test_api-db",
+        "description": "test_api-db",
+        "peekOfCode": "def test_transaction_management(db_connection):\n    # Perform multiple database operations within a transaction\n    with db_connection.client.start_session() as session:\n        with session.start_transaction():\n            # Execute multiple database operations\n            db_connection.users.insert_one({\"name\": \"Transaction User\"})\n            db_connection.users.delete_one({\"name\": \"Transaction User\"})\n    # Verify that the transaction was successful by checking if the data was deleted\n    assert db_connection.users.find_one({\"name\": \"Transaction User\"}) is None\n# Test performance of database operations (optional)",
+        "detail": "test_api-db",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "test_api-rest",
+        "description": "test_api-rest",
+        "peekOfCode": "def client():\n    app.config[\"TESTING\"] = True\n    with app.test_client() as client:\n        yield client\n# Authentication enpoint('/auth')\ndef test_valid_credentials(client):\n    # Test valid authentication credentials\n    valid_credentials = {}\n    valid_credentials = {\"username\": \"Mohammed\", \"password\": \"password\"}\n    response = client.post(\"/auth\", json=valid_credentials)",
+        "detail": "test_api-rest",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_credentials",
+        "kind": 2,
+        "importPath": "test_api-rest",
+        "description": "test_api-rest",
+        "peekOfCode": "def test_valid_credentials(client):\n    # Test valid authentication credentials\n    valid_credentials = {}\n    valid_credentials = {\"username\": \"Mohammed\", \"password\": \"password\"}\n    response = client.post(\"/auth\", json=valid_credentials)\n    assert response.status_code == 200\n    assert \"access_token\" in response.json\ndef test_invalid_credentials(client):\n    # Test invalid authentication credentials\n    invalid_credentials = {\"username\": \"admin\", \"password\": \"admin_password\"}",
+        "detail": "test_api-rest",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_credentials",
+        "kind": 2,
+        "importPath": "test_api-rest",
+        "description": "test_api-rest",
+        "peekOfCode": "def test_invalid_credentials(client):\n    # Test invalid authentication credentials\n    invalid_credentials = {\"username\": \"admin\", \"password\": \"admin_password\"}\n    response = client.post(\"/auth\", json=invalid_credentials)\n    assert response.status_code == 401\n    assert \"error\" in response.json\ndef test_missing_username(client):\n    # Test missing username parameter in the request\n    missing_username = {\"password\": \"password\"}\n    response = client.post(\"/auth\", json=missing_username)",
+        "detail": "test_api-rest",
+        "documentation": {}
+    },
+    {
+        "label": "test_missing_username",
+        "kind": 2,
+        "importPath": "test_api-rest",
+        "description": "test_api-rest",
+        "peekOfCode": "def test_missing_username(client):\n    # Test missing username parameter in the request\n    missing_username = {\"password\": \"password\"}\n    response = client.post(\"/auth\", json=missing_username)\n    assert response.status_code == 400\n    assert \"error\" in response.json\ndef test_missing_password(client):\n    # Test missing password in the request\n    missing_password = {\"username\": \"admin\"}\n    response = client.post(\"/auth\", json=missing_password)",
+        "detail": "test_api-rest",
+        "documentation": {}
+    },
+    {
+        "label": "test_missing_password",
+        "kind": 2,
+        "importPath": "test_api-rest",
+        "description": "test_api-rest",
+        "peekOfCode": "def test_missing_password(client):\n    # Test missing password in the request\n    missing_password = {\"username\": \"admin\"}\n    response = client.post(\"/auth\", json=missing_password)\n    assert response.status_code == 400\n    assert \"error\" in response.json\ndef test_empty_credentials(client):\n    # Test with empty username and password\n    empty_credentials = {\"username\": \"\", \"password\": \"\"}\n    response = client.post(\"/auth\", json=empty_credentials)",
+        "detail": "test_api-rest",
+        "documentation": {}
+    },
+    {
+        "label": "test_empty_credentials",
+        "kind": 2,
+        "importPath": "test_api-rest",
+        "description": "test_api-rest",
+        "peekOfCode": "def test_empty_credentials(client):\n    # Test with empty username and password\n    empty_credentials = {\"username\": \"\", \"password\": \"\"}\n    response = client.post(\"/auth\", json=empty_credentials)\n    assert response.status_code == 401\n    assert \"error\" in response.json\ndef test_invalid_json_request(client):\n    # Test with invalid JSON format\n    invalid_json = 'invalid_json'\n    response = client.post('/auth', data=invalid_json, content_type='application/json')",
+        "detail": "test_api-rest",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_json_request",
+        "kind": 2,
+        "importPath": "test_api-rest",
+        "description": "test_api-rest",
+        "peekOfCode": "def test_invalid_json_request(client):\n    # Test with invalid JSON format\n    invalid_json = 'invalid_json'\n    response = client.post('/auth', data=invalid_json, content_type='application/json')\n    assert response.status_code == 400\n    assert response.json is None  # Check if response.json is None\n# Add more test cases for other endpoints as needed\nif __name__ == \"__main__\":\n    pytest.main()",
+        "detail": "test_api-rest",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "test_api-transfer",
+        "description": "test_api-transfer",
+        "peekOfCode": "def client():\n    with app.test_client() as client:\n        yield client\ndef test_transfer_funds(client):\n    # Authenticate user and get JWT token\n    response = client.post('/auth', json={'username': 'Mohammed', 'password': 'password'})\n    assert response.status_code == 200\n    access_token = response.json['access_token']\n    # Prepare test data\n    data = {",
+        "detail": "test_api-transfer",
+        "documentation": {}
+    },
+    {
+        "label": "test_transfer_funds",
+        "kind": 2,
+        "importPath": "test_api-transfer",
+        "description": "test_api-transfer",
+        "peekOfCode": "def test_transfer_funds(client):\n    # Authenticate user and get JWT token\n    response = client.post('/auth', json={'username': 'Mohammed', 'password': 'password'})\n    assert response.status_code == 200\n    access_token = response.json['access_token']\n    # Prepare test data\n    data = {\n        \"from_user_id\": 1,\n        \"from_account_id\": \"1DMJZ2PZ9NVD\",  # Account ID represented as string\n        \"to_user_id\": 8,",
+        "detail": "test_api-transfer",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def client():\n    app.config['TESTING'] = True\n    with app.test_client() as client:\n        yield client\ndef get_access_token(client):\n    response = client.post('/auth', json={\"username\": \"Mohammed\", \"password\": \"password\"})\n    return response.json.get('access_token', '')\ndef test_get_all_users(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}",
+        "detail": "test_api-users",
+        "documentation": {}
+    },
+    {
+        "label": "get_access_token",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def get_access_token(client):\n    response = client.post('/auth', json={\"username\": \"Mohammed\", \"password\": \"password\"})\n    return response.json.get('access_token', '')\ndef test_get_all_users(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    response = client.get('/users', headers=headers)\n    assert response.status_code == 200\n    assert isinstance(response.json, list)\ndef test_create_user_with_valid_data(client):",
+        "detail": "test_api-users",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_all_users",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def test_get_all_users(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    response = client.get('/users', headers=headers)\n    assert response.status_code == 200\n    assert isinstance(response.json, list)\ndef test_create_user_with_valid_data(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    user_data = {",
+        "detail": "test_api-users",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_user_with_valid_data",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def test_create_user_with_valid_data(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    user_data = {\n        \"name\": \"Jeremiah Grealish\",\n        \"email\": \"grealish@city.com\"\n    }\n    response = client.post('/users', json=user_data, headers=headers)\n    assert response.status_code == 201\n    assert 'user_id' in response.json",
+        "detail": "test_api-users",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_user_with_missing_parameters",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def test_create_user_with_missing_parameters(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    user_data = {\n        \"email\": \"haaland@example.com\"\n    }\n    response = client.post('/users', json=user_data, headers=headers)\n    assert response.status_code == 400\n    assert 'error' in response.json\ndef test_get_specific_user_by_id(client):",
+        "detail": "test_api-users",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_specific_user_by_id",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def test_get_specific_user_by_id(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    response = client.get('/users/1', headers=headers)\n    assert response.status_code == 200\n    assert isinstance(response.json, dict)\ndef test_delete_last_user(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    # Get all users to ensure there are existing users",
+        "detail": "test_api-users",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_last_user",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def test_delete_last_user(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    # Get all users to ensure there are existing users\n    response = client.get('/users', headers=headers)\n    assert response.status_code == 200\n    assert isinstance(response.json, list)\n    assert len(response.json) > 0\n    # Get the ID of the last user\n    last_user_id = response.json[0]['users'][-1]['_id']",
+        "detail": "test_api-users",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_accounts_for_specific_user",
+        "kind": 2,
+        "importPath": "test_api-users",
+        "description": "test_api-users",
+        "peekOfCode": "def test_get_accounts_for_specific_user(client):\n    access_token = get_access_token(client)\n    headers = {'Authorization': 'Bearer ' + access_token}\n    response = client.get('/users/1/accounts', headers=headers)\n    assert response.status_code == 200\n    assert isinstance(response.json, list)\nif __name__ == \"__main__\":\n    pytest.main()",
+        "detail": "test_api-users",
+        "documentation": {}
+    }
+]

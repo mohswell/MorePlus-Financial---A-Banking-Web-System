@@ -1,0 +1,74 @@
+{
+    "users": [
+        {
+            "_id": 1,
+            "name": "John Doe",
+            "email": "john@gmail.com",
+            "accounts": [
+                {
+                    "_id": 101,
+                    "type": "savings",
+                    "balance": 1000
+                },
+                {
+                    "_id": 102,
+                    "type": "checking",
+                    "balance": 500
+                }
+            ]
+        },
+        {
+            "_id": 2,
+            "name": "Jane Smith",
+            "email": "jane@yahoo.com",
+            "accounts": [
+                {
+                    "_id": 201,
+                    "type": "savings",
+                    "balance": 1500
+                }
+            ]
+        },
+        {
+            "_id": 3,
+            "name": "Ali Said",
+            "email": "ali@outlook.com",
+            "accounts": [
+                {
+                    "_id": 150,
+                    "type": "pension",
+                    "balance": 13000
+                }
+            ]
+        },
+        {
+            "_id": 4,
+            "name": "Mohs Law",
+            "email": "mohslaw@gmail.com",
+            "accounts": [
+                {
+                    "_id": 160,
+                    "type": "student",
+                    "balance": 30200
+                },
+                {
+                    "_id": 234,
+                    "type": "savings",
+                    "balance": 1800
+                }
+            ]
+        },
+        {
+            "_id": 5,
+            "name": "Jon Snow",
+            "email": "snow@black.com",
+            "accounts": [
+                {
+                    "_id": 432,
+                    "type": "savings",
+                    "balance": 10500
+                }
+            ]
+        }
+    ]
+}
