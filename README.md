@@ -1,4 +1,4 @@
-### ‼️😁 Note: This project is about 80% complete, since I am completely done with the Rest Api backend and I am slowly developing the frontend. It's just the login, transaction and account pages that are pushed together with the necessary express.js folders including models, views, routes, public, tests. Inshaallah expect more files such as the complete customer dashboard by the beginning week of May 2024.
+### ‼️😁 Note: This project is about 85% complete, since I am completely done with the Rest API backend and I am slowly developing the frontend. It's just the login, transaction and account pages that are pushed together with the necessary express.js folders including models, views, routes, public, tests. Inshaallah expect more files such as the complete customer dashboard by end of May 2024.
 
 # 🏦 MorePlus Financial Bank - Banking Web System
 
@@ -22,7 +22,7 @@ MorePlus Financial Bank is a fictional banking web application developed using E
 - **Selenium WebDriver**: Browser automation tool used for testing web applications.
 - **EJS**: Templating engine for rendering dynamic content on the web pages.
 - **Bootstrap**: Front-end framework for building responsive and mobile-first websites.
-- **MySQL**: Relational database management system used to store user data.
+- **MongoDB**: Relational database management system used to store user data.
 
 ---
 
