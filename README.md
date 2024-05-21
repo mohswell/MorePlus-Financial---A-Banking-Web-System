@@ -1,4 +1,4 @@
-### ‼️😁 Note: This project is about 85% complete, since I am completely done with the Rest API backend and I am slowly developing the frontend. It's just the login, transaction and account pages that are pushed together with the necessary express.js folders including models, views, routes, public, tests. Inshaallah expect more files such as the complete customer dashboard by end of May 2024.
+### 😁 Note: This project is about 85% complete, since I am completely done with the backend and I am slowly developing the frontend using React.js. It's just the login, transaction and account pages that are pushed together with the necessary express.js folders including models, views, routes, public, tests.
 
 # 🏦 MorePlus Financial Bank - Banking Web System
 
