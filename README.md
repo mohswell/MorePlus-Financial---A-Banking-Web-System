@@ -1,5 +1,3 @@
-### 😁 Note: This project is about 85% complete, since I am completely done with the backend and I am slowly developing the frontend using React.js. It's just the login, transaction and account pages that are pushed together with the necessary express.js folders including models, views, routes, public, tests.
-
 # 🏦 MorePlus Financial Bank - Banking Web System
 
 MorePlus Financial Bank is a fictional banking web application developed using Express and Node.js. This application provides a user-friendly interface for customers to manage their banking needs online. The system includes core banking functionalities such as user registration, login, and dashboard access, along with Selenium Chrome WebDriver tests to ensure the reliability of these features.
