@@ -1,7 +1,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 const assert = require('assert');
 
-describe('Authentication Tests', function() {
+describe('Authentication Tests For registration', function() {
     let driver;
 
     before(async function() {
